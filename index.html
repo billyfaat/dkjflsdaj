@@ -1,0 +1,63 @@
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+\t<title>Website Ranking</title> \t<script type="text\/javascript"> \t\tlet websites = [];
+\t\tfunction addWebsite() { \t\t\t\/\/ Get input values \t\t\tlet websiteName = document.getElementById("webs
+ite-name").value; \t\t\tlet websiteURL =
+document.getElementById("webs
+ite-url").value;
+\t\t\t\/\/ Add website to array \t\t\twebsites.push({
+\t\t\t\tname: websiteName,
+\t\t\t\turl: websiteURL,
+\t\t\t\tclicks: 0 \t\t\t});
+\t\t\t\/\/ Clear input fields
+\t\t\tdocument.getElementB
+yld("website-name").value =
+IIII.
+\t\t\tdocument.getElemen
+tById("website-url").value =
+III.
+\t\t\t\/\/ Sort websites by clicks
+\t\t\tsortWebsites();
+\t\t}
+\t\tfunction sortWebsites() { \t\t\t\/\/ Sort websites by clicks in descending order
+\t\t\twebsites.sort(function(a, b)
+{
+\t\t\t\treturn b.clicks - a.clicks; \t\t\t});
+\t\t\t\/\/ Display websites in
+sorted order
+\t\t\tlet list = document.getElem
+entById("website-list");
+\t\t\tlist.innerHTML =
+\t\t\tfor (let i = 0; i < websites.length; i++) { \t\t\t\tlet item =
+IIII.
+document.createElement("li"); \t\t\t\titem.innerHTML =
+=
+"<a href=" + websites[i].url +"" target='_blank'>" +
+websites[i].name + "<\/a> - Clicks: " + websites[i].clicks; \t\t\t\tlist.appendChild(item);
+\t\t\t}
+\t\t}
+\t\tfunction
+incrementClicks(index) {
+\t\t\t\/\/ Increment clicks for
+website at specified index
+\t\t\twebsites[index].clicks++;
+\t\t\t\/\/ Sort websites by clicks \t\t\tsortWebsites();
+\t\t} \t<\/script> <V/head> <body>
+\t<h1>Website Ranking</h1> \t<p>Enter the name and URL
+of a website to add it to the list. Click on a website to increment its clicks.<\/p>
+\t<p>
+\t\t<label>Name:<\/label>
+\t\t<input type="text"
+id="website-name">
+\t\t<label>URL:<\/label>
+\t\t<input type="text"
+id="website-url">
+\t\t<button
+onclick="addWebsite()">Add
+Website<\/button>
+\t<\/p>
+\t<ul id="website-list"><\/ul>
+<\/body> <\/html>
