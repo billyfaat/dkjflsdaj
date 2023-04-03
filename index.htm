@@ -10,25 +10,3 @@
 		<input type="text" name="website" id="website">
 		<button type="submit" name="submit">Submit</button>
 	</form>
-
-	<h2>Most Clicked Websites:</h2>
-	<ul>
-		<?php
-		// Retrieve website click data from a database or a file
-		$click_data = array(
-			'https://www.example.com' => 10,
-			'https://www.google.com' => 20,
-			'https://www.yahoo.com' => 5,
-			'https://www.bing.com' => 3
-		);
-		// Sort the click data in descending order of clicks
-		arsort($click_data);
-
-		// Display the sorted click data
-		foreach ($click_data as $website => $clicks) {
-			echo "<li><a href='$website' target='_blank'>$website</a> ($clicks clicks)</li>";
-		}
-		?>
-	</ul>
-</body>
-</html>
